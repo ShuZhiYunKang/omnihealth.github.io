@@ -1,3 +1,38 @@
+@font-face {
+    font-family: 'Proza Libre';
+    src: url('../webfonts/ProzaLibre-Regular.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proza Libre';
+    src: url('../webfonts/ProzaLibre-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proza Libre';
+    src: url('../webfonts/ProzaLibre-SemiBold.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proza Libre';
+    src: url('../webfonts/ProzaLibre-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proza Libre';
+    src: url('../webfonts/ProzaLibre-SemiBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
 // Misc.
 	$misc: (
 		z-index-base:		10000,
@@ -38,7 +73,7 @@
 
 // Font.
 	$font: (
-		family:				('Source Sans Pro', Helvetica, sans-serif),
+		family:				('Proza Libre', Helvetica, sans-serif),
 		family-fixed:		('Courier New', monospace),
 		weight:				300,
 		weight-bold:		400,
