@@ -348,10 +348,10 @@ function submitForm(event) {
 	const message = document.getElementById('message').value;
 
 	const formattedMessage = `
-		姓名: ${name}
-		邮箱: ${email}
-		消息: ${message}
-				`.trim();
+	Name: ${name}
+	Email: ${email}
+	Message: ${message}
+		`.trim();
 
 	fetch('https://dev.world.kuaikangkeji.com/form-contact-me', {
 		method: 'POST',
@@ -367,14 +367,14 @@ function submitForm(event) {
 	})
 		.then(response => {
 			if (response.ok) {
-				alert('消息发送成功！');
+				alert('Submitted');
 				document.getElementById('contact-form').reset();
 			} else {
-				alert('发送失败，请稍后重试。');
+				alert('Something went wrong. Please try again later.');
 			}
 		})
 		.catch(error => {
 			console.error('Error:', error);
-			alert('发送失败，请稍后重试。');
+			alert('Something went wrong. Please try again later.');
 		});
 }
