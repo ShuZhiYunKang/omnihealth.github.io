@@ -339,3 +339,42 @@
 						});
 
 })(jQuery);
+
+function submitForm(event) {
+	event.preventDefault();
+
+	const name = document.getElementById('name').value;
+	const email = document.getElementById('email').value;
+	const message = document.getElementById('message').value;
+
+	const formattedMessage = `
+		姓名: ${name}
+		邮箱: ${email}
+		消息: ${message}
+				`.trim();
+
+	fetch('https://dev.world.kuaikangkeji.com/form-contact-me', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({
+			msg_type: "text",
+			content: {
+				text: formattedMessage
+			}
+		})
+	})
+		.then(response => {
+			if (response.ok) {
+				alert('消息发送成功！');
+				document.getElementById('contact-form').reset();
+			} else {
+				alert('发送失败，请稍后重试。');
+			}
+		})
+		.catch(error => {
+			console.error('Error:', error);
+			alert('发送失败，请稍后重试。');
+		});
+}
