@@ -117,7 +117,7 @@
 		}
 
 		&:before {
-			background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="32px" viewBox="0 0 64 32" zoomAndPan="disable"><style>rect {fill: transparent; stroke: #{_palette($p, border)}; stroke-width: #{_size(border-width)}; }</style><rect rx="4" ry="4" x="11" y="12" width="42" height="8" vector-effect="non-scaling-stroke" /></svg>');
+			background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="32px" viewBox="0 0 64 32" zoomAndPan="disable"><style>rect {fill: transparent; stroke: #{_palette($p, border)}; stroke-width: #{_size(border-width)}; }</style><rect rx="4" ry="4" x="11" y="12" width="42" height="8" vector-effect="non-scaling-stroke" /></style></svg>');
 			border-color: _palette($p, border);
 
 			@if ($p == 'invert') {
@@ -130,7 +130,7 @@
 		}
 
 		&:after {
-			background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="32px" viewBox="0 0 64 32" zoomAndPan="disable"><style>circle {fill: transparent; stroke: #{_palette($p, border)}; stroke-width: #{_size(border-width)}; }</style><circle cx="32" cy="16" r="14" vector-effect="non-scaling-stroke" /></svg>');
+			background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="32px" viewBox="0 0 64 32" zoomAndPan="disable"><style>circle {fill: transparent; stroke: #{_palette($p, border)}; stroke-width: #{_size(border-width)}; }</style><circle cx="32" cy="16" r="14" vector-effect="non-scaling-stroke" /></style></svg>');
 			border-color: _palette($p, border);
 
 			@if ($p == 'invert') {
@@ -146,7 +146,7 @@
 	@mixin color-phone-variant($v, $p) {
 		@if ($v == 'android') {
 			&:after {
-				background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="32px" viewBox="0 0 64 32" zoomAndPan="disable"><style>rect {fill: transparent; stroke: #{_palette($p, border)}; stroke-width: #{_size(border-width)}; }</style><rect rx="4" ry="4" x="6" y="4" width="52" height="24" vector-effect="non-scaling-stroke" /></svg>');
+				background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="32px" viewBox="0 0 64 32" zoomAndPan="disable"><style>rect {fill: transparent; stroke: #{_palette($p, border)}; stroke-width: #{_size(border-width)}; }</style><rect rx="4" ry="4" x="6" y="4" width="52" height="24" vector-effect="non-scaling-stroke" /></style></svg>');
 			}
 		}
 		@else if ($p == 'iphone') {
@@ -236,6 +236,10 @@ section.banner {
             img {
                 height: 40px;
             }
+
+            @media screen and (max-width: 980px) {
+                margin-left: 20px;
+            }
         }
 
         .nav-links {
@@ -255,16 +259,39 @@ section.banner {
                     margin: 0 2rem;
                 }
             }
+
+            @media screen and (max-width: 980px) {
+                margin-left: 40px;
+                
+                a {
+                    margin: 0 0.5rem;
+                    
+                    &:not(.active) {
+                        margin: 0 0.5rem;
+                    }
+                }
+            }
         }
+    }
+
+    @media screen and (max-width: 980px) {
+        height: 80px;
+        padding: 0.5rem;
     }
 }
 
 // Privacy Policy Styles
 .privacy-content {
-    padding-top: 150px;
+    padding-top: 100px;
     max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 50px;
+
+    @media screen and (max-width: 980px) {
+        padding-top: 60px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 
     h1 {
         font-size: 28px;
