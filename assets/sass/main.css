@@ -7810,4 +7810,69 @@ section.banner .image img.logo {
           transform: translateX(0);
   left: auto;
 }
+
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e6e6e6;
+  height: 128px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#nav .nav-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#nav .nav-container .logo-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 100px;
+}
+
+#nav .nav-container .logo-link img {
+  height: 40px;
+}
+
+#nav .nav-container .nav-links {
+  margin-left: 200px;
+}
+
+#nav .nav-container .nav-links a {
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+#nav .nav-container .nav-links a.active {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+
+#nav .nav-container .nav-links a:not(.active) {
+  color: #666666;
+  margin: 0 2rem;
+}
 /*# sourceMappingURL=main.css.map */

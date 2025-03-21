@@ -206,3 +206,56 @@ section.banner {
         }
     }
 }
+
+// Navigation styles
+#nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-bottom: 1px solid #e6e6e6;
+    height: 128px;
+    display: flex;
+    align-items: center;
+
+    .nav-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            margin-left: 100px;
+
+            img {
+                height: 40px;
+            }
+        }
+
+        .nav-links {
+            margin-left: 200px;
+
+            a {
+                text-decoration: none;
+                margin: 0 1rem;
+                
+                &.active {
+                    color: #000;
+                    border-bottom: 2px solid #000;
+                }
+
+                &:not(.active) {
+                    color: #666666;
+                    margin: 0 2rem;
+                }
+            }
+        }
+    }
+}
