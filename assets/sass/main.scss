@@ -247,16 +247,12 @@ section.banner {
 
             a {
                 text-decoration: none;
-                margin: 0 1rem;
+                margin: 0 2rem;
+                color: #666666;
                 
                 &.active {
                     color: #000;
                     border-bottom: 2px solid #000;
-                }
-
-                &:not(.active) {
-                    color: #666666;
-                    margin: 0 2rem;
                 }
             }
 
@@ -265,10 +261,6 @@ section.banner {
                 
                 a {
                     margin: 0 0.5rem;
-                    
-                    &:not(.active) {
-                        margin: 0 0.5rem;
-                    }
                 }
             }
         }
@@ -305,6 +297,8 @@ section.banner {
         margin-bottom: 0.3rem;
         line-height: normal;
         font-size: 16px;
+		color: #666666;
+		font-weight: 300;
     }
 
     h2 {
@@ -319,6 +313,8 @@ section.banner {
         margin-bottom: 0.3rem;
         line-height: normal;
         font-size: 16px;
+		color: #666666;
+		font-weight: 300;
     }
 
     .last-updated {

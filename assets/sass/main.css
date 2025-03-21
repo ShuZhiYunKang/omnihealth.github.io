@@ -7868,7 +7868,8 @@ section.banner .image img.logo {
 
 #nav .nav-container .nav-links a {
   text-decoration: none;
-  margin: 0 1rem;
+  margin: 0 2rem;
+  color: #666666;
 }
 
 #nav .nav-container .nav-links a.active {
@@ -7876,19 +7877,11 @@ section.banner .image img.logo {
   border-bottom: 2px solid #000;
 }
 
-#nav .nav-container .nav-links a:not(.active) {
-  color: #666666;
-  margin: 0 2rem;
-}
-
 @media screen and (max-width: 980px) {
   #nav .nav-container .nav-links {
     margin-left: 40px;
   }
   #nav .nav-container .nav-links a {
-    margin: 0 0.5rem;
-  }
-  #nav .nav-container .nav-links a:not(.active) {
     margin: 0 0.5rem;
   }
 }
@@ -7927,6 +7920,8 @@ section.banner .image img.logo {
   margin-bottom: 0.3rem;
   line-height: normal;
   font-size: 16px;
+  color: #666666;
+  font-weight: 300;
 }
 
 .privacy-content h2 {
@@ -7941,6 +7936,8 @@ section.banner .image img.logo {
   margin-bottom: 0.3rem;
   line-height: normal;
   font-size: 16px;
+  color: #666666;
+  font-weight: 300;
 }
 
 .privacy-content .last-updated {
