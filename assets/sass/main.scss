@@ -209,7 +209,6 @@ section.banner {
 
 // Navigation styles
 #nav {
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -256,6 +255,57 @@ section.banner {
                     margin: 0 2rem;
                 }
             }
+        }
+    }
+}
+
+// Privacy Policy Styles
+.privacy-content {
+    padding-top: 150px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 1rem;
+        font-weight: 400;
+    }
+
+    ul {
+        list-style: disc;
+        margin-left: 0rem;
+        margin-bottom: 0.3rem;
+        line-height: normal;
+        font-size: 16px;
+    }
+
+    h2 {
+        line-height: normal;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+        margin-top: 1rem;
+    }
+
+    p {
+        margin-bottom: 0.3rem;
+        line-height: normal;
+        font-size: 16px;
+    }
+
+    .last-updated {
+        color: #666;
+        margin-top: 3rem;
+        font-style: italic;
+    }
+
+    a {
+        color: #4A90E2;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
         }
     }
 }
