@@ -79,22 +79,43 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-        // 根据浏览器语言设置下载链接
+        // 根据浏览器语言和设备类型设置下载链接
         (function() {
-            // 检测浏览器语言
-            var language = navigator.language || navigator.userLanguage;
+            var language = navigator.language || navigator.userLanguage || '';
             var isChinese = language.toLowerCase().startsWith('zh');
-            
+            var userAgent = navigator.userAgent || '';
+            var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+
             var appleBtn = document.getElementById('apple-download-btn');
             var androidBtn = document.getElementById('android-download-btn');
-            
-            if (isChinese) {
-                // 中文环境：使用中文App Store链接
-                appleBtn.href = 'https://apps.apple.com/cn/app/%E5%85%83%E5%BF%B5%E5%81%A5%E5%BA%B7-%E7%9D%A1%E7%9C%A0%E5%8E%8B%E5%8A%9B%E7%B2%BE%E5%8A%9B%E4%BD%93%E9%87%8D%E4%BB%A3%E8%B0%A2%E5%81%A5%E5%BA%B7%E7%AE%A1%E7%90%86/id6504599573';
-                // 中文环境：使用应用市场搜索链接
-                androidBtn.href = 'market://search?q=快康AI助手';
+
+            if (!appleBtn || !androidBtn) {
+                return;
             }
-            // 非中文环境保持原有链接不变
+
+            var appleCnLink = 'https://apps.apple.com/cn/app/%E5%85%83%E5%BF%B5%E5%81%A5%E5%BA%B7-%E7%9D%A1%E7%9C%A0%E5%8E%8B%E5%8A%9B%E7%B2%BE%E5%8A%9B%E4%BD%93%E9%87%8D%E4%BB%A3%E8%B0%A2%E5%81%A5%E5%BA%B7%E7%AE%A1%E7%90%86/id6504599573';
+            var appleGlobalLink = 'https://apps.apple.com/us/app/omni-health-ai-energy-coach/id6612026553';
+            var androidCnPcLink = 'https://sj.qq.com/appdetail/com.shuzhiyunkang.health.ai';
+            var androidCnMobileLink = 'market://search?q=快康AI助手';
+            var androidGlobalLink = 'https://play.google.com/store/apps/details?id=com.omnihealth.international';
+
+            if (isMobile) {
+                if (isChinese) {
+                    appleBtn.href = appleCnLink;
+                    androidBtn.href = androidCnMobileLink;
+                } else {
+                    appleBtn.href = appleGlobalLink;
+                    androidBtn.href = androidGlobalLink;
+                }
+            } else {
+                if (isChinese) {
+                    appleBtn.href = appleCnLink;
+                    androidBtn.href = androidCnPcLink;
+                } else {
+                    appleBtn.href = appleGlobalLink;
+                    androidBtn.href = androidGlobalLink;
+                }
+            }
         })();
     </script>
 </body>
