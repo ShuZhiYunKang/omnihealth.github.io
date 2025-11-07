@@ -28,10 +28,10 @@
         <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
             <div class="content">
                 <div class="download-buttons" style="display: flex; gap: 1rem; margin-bottom: 2rem;">
-                    <a href="https://apps.apple.com/us/app/omni-health-weight-wellness/id6612026553" class="button primary big" style="min-width: 160px; padding: 0 1.5rem; display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">
+                    <a id="apple-download-btn" href="https://apps.apple.com/us/app/omni-health-weight-wellness/id6612026553" class="button primary big" style="min-width: 160px; padding: 0 1.5rem; display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">
                         <i class="fab fa-apple"></i>&nbsp;Apple
                     </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.omnihealth.international&pli=1" class="button primary big" style="min-width: 160px; padding: 0 1.5rem; display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">
+                    <a id="android-download-btn" href="https://play.google.com/store/apps/details?id=com.omnihealth.international&pli=1" class="button primary big" style="min-width: 160px; padding: 0 1.5rem; display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">
                         <i class="fab fa-android"></i>&nbsp;Android
                     </a>
                 </div>
@@ -78,5 +78,24 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        // 根据浏览器语言设置下载链接
+        (function() {
+            // 检测浏览器语言
+            var language = navigator.language || navigator.userLanguage;
+            var isChinese = language.toLowerCase().startsWith('zh');
+            
+            var appleBtn = document.getElementById('apple-download-btn');
+            var androidBtn = document.getElementById('android-download-btn');
+            
+            if (isChinese) {
+                // 中文环境：使用中文App Store链接
+                appleBtn.href = 'https://apps.apple.com/cn/app/%E5%85%83%E5%BF%B5%E5%81%A5%E5%BA%B7-%E7%9D%A1%E7%9C%A0%E5%8E%8B%E5%8A%9B%E7%B2%BE%E5%8A%9B%E4%BD%93%E9%87%8D%E4%BB%A3%E8%B0%A2%E5%81%A5%E5%BA%B7%E7%AE%A1%E7%90%86/id6504599573';
+                // 中文环境：使用应用市场搜索链接
+                androidBtn.href = 'market://search?q=快康AI助手';
+            }
+            // 非中文环境保持原有链接不变
+        })();
+    </script>
 </body>
 </html> 
